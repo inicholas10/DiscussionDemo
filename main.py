@@ -4,6 +4,13 @@ def encoder(password):
         new_password += str((int(i)+3) % 10)
     return new_password
 
+def decoder(string):
+    new_string = ''
+    for i in string:
+        new_string += str((int(i)-3) % 10)
+
+    return new_string
+
 def main():
 
     while True:
@@ -19,7 +26,7 @@ def main():
             new_password = encoder(password)
             print("Your password has been encoded and stored!\n")
         if menu_option == 2:
-            pass
+            print(f'The encoded password is {new_password}, and the original password is {decoder(new_password)}.\n')
         if menu_option == 3:
             break
 
